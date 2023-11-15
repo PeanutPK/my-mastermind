@@ -34,17 +34,21 @@ class Setup:
             hint_count = 0
             start_game.goal()
             # Enable the line below to test with answer.
-            # print(start_game.color_goal)
+            print(start_game.color_goal)
             tries = 1
             guess = guessing(self.rnum)
             while guess != self.color_goal:
                 self.color_check(guess)
                 print("Wrong!!! 😭 try again")
                 if tries % 3 == 0:
+                    print('\n', '=' * 10)
+                    print("Special offers")
                     hint_count = self.hint(hint_count)
+                    print('=' * 10, '\n')
                 guess = guessing(self.rnum)
                 tries += 1
-            print(f"\nThe answer is {self.color_goal}")
+            print(f"\nThe answer is "
+                  f"{''.join(str(x) for x in self.color_goal)}")
             if tries > 1:
                 print(f"You guessed it after {tries} tries. 🐵")
             else:
