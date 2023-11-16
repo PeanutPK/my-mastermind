@@ -41,7 +41,8 @@ class Setup:
                 self.color_check(guess)
                 print("Wrong!!! 😭 try again")
                 if tries % 3 == 0:
-                    print('\n', '=' * 10)
+                    print()
+                    print('=' * 10)
                     print("Special offers")
                     hint_count = self.hint(hint_count)
                     print('=' * 10, '\n')
